@@ -5,13 +5,8 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [todos, setTodos] = useState([]);
   const [filterState, setFilterState] = useState("");
-  function changeColor(e) {
-    const clicked = e.target;
-    clicked.style.backgroundColor = "black";
-    console.log(clicked);
-  }
 
-  function createNewTask() {
+  const createNewTask=()=> {
     if (inputValue.length === 0) {
       console.log("hello");
     } else {
@@ -39,13 +34,21 @@ function App() {
     });
     setTodos(updatedTodos);
   };
-  
+
+  const deleteToDo = (id) => {
+    const updatedTodos = todos.filter((task) => task.id !== id);
+    setTodos(updatedTodos);
+  };
+
+  const clearCompleted = () => {
+    const updatedTodos = todos.filter((task) => task.state !== "completed");
+    setTodos(updatedTodos);
+    
+  };
 
   const filterButtonHandler = (filterState) => {
     setFilterState(filterState);
   };
-
-  
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -58,6 +61,7 @@ function App() {
           <input
             type="text"
             placeholder="Add a new task..."
+            className="textInput"
             onChange={handleInputChange}
           />
           <button className="addButton" onClick={createNewTask}>
@@ -69,60 +73,67 @@ function App() {
             onClick={() => {
               filterButtonHandler("all");
             }}
-            style={{ 
-              backgroundColor: filterState == "all" ? "#3c82f6" : "#F3F4F6",
-              color:filterState == "all" ? "#F3F4F6" : "black",
-             }}
-
-          >
-            All
-          </button>
+            className={filterState=="all" ? "clicked":"nonClicked"}
+            
+          >All</button>
           <button
             onClick={() => {
               filterButtonHandler("active");
             }}
-            style={{ 
-              backgroundColor: filterState == "active" ? "#3c82f6" : "#F3F4F6",
-              color:filterState == "active" ? "#F3F4F6" : "black",
-             }}
-          >
-            Active
-          </button>
+            className={filterState=="active" ? "clicked":"nonClicked"}
+            
+          >Active</button>
           <button
             onClick={() => {
               filterButtonHandler("completed");
             }}
-            style={{ 
-              backgroundColor: filterState == "completed" ? "#3c82f6" : "#F3F4F6",
-              color:filterState == "completed" ? "#F3F4F6" : "black",
-             }}
-          >
-            Completed
-          </button>
+            className={filterState=="completed" ? "clicked":"nonClicked"}
+            
+          >Completed</button>
         </div>
         {todos.length === 0 ? (
           <h3>No tasks yet. Add one above!</h3>
         ) : (
-          <div>
-            {todos.filter((todo) => {
-              if(filterState=="active"){
-                return todo.state==="active"
+          <div className="todos">
+            {todos
+              .filter((todo) => {
+                if (filterState == "active") {
+                  return todo.state === "active";
+                } else if (filterState == "completed") {
+                  return todo.state === "completed";
+                } else return true;
+              })
+              .map((task, index) => (
+                <label key={index} className="todo">
+                  <div style={{display:"flex",
+                    alignItems:"center",
+                    gap:"10px"
+                  }}>
+                  <input
+                    type="checkbox"
+                    style={{
+                      boxShadow: "0px 0px 8px 0px rgba(0, 98, 255, 0.8)",
+                      height:"fit-content",
+                  
+                  }}
+                    onChange={() => checkboxHandler(task.id)}
+                    checked={task.state == "completed"}
+                  />
+                  <p style={{textDecoration: task.state=="completed"&&'line-through',fontWeight:"300"}}>{task.task}</p>
+                  </div>
+                  <button style={{ color: "red" }} onClick={()=>deleteToDo(task.id)} >Delete</button>
+                </label>
+              ))
               }
-              else if(filterState=="completed"){
-                return todo.state==="completed"
-              }
-              else return true
-            }).map((task, index) => (
-              <label key={index} className="todo">
-                <input
-                  type="checkbox"
-                  onChange={() => checkboxHandler(task.id)}
-                  checked={task.state == "completed"}
-                />
-                <h3>{task.task}</h3>
-                <button style={{color:"red"}}>Delete</button>
-              </label>
-            ))}
+              <div style={{display:"flex" ,justifyContent:"space-between", height:"60px",alignItems:"center",width:"345px",color:"#6B7280"
+              }}>
+              <p>{todos.filter((todo) => {
+                if (todo.state == "completed") {
+                  return true}
+              }).length} of {todos.length} tasks completed</p>
+              <p style={{color:"red"}} onClick={clearCompleted}>Clear completed</p>
+              </div>
+              
           </div>
         )}
         <div className="footer">

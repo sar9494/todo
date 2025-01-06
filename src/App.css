@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   border-radius: 6px;
   background: #fff;
   border: none;
@@ -24,29 +24,43 @@
   color: white;
   border: none;
   display: flex;
-  padding: 8px 16px;
+  padding: 4px 16px;
   align-items: center;
   font-size: 18px;
   border-radius: 6px;
 }
+.nonClicked{
+  background-color:#F3F4F6;
+              color:black
+}
+.clicked{
+  background-color:#3c82f6;
+              color: #F3F4F6 ;
+}
 .filterButtons {
   display: flex;
   gap: 5px;
-  margin: 0px 100px 0px 0px;
+  width: 95%;
 }
 .filterButtons button{
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
-  height: 32px;
+  height: 35px;
+  padding: 4px 12px;
 }
 input {
   color: #71717a;
   display: flex;
-  height: 40px;
+  height: 30px;
   padding: 8px 16px;
   justify-content: center;
   align-items: flex-start;
+  border: none;
+}
+.textInput{
+  width: 250px;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.16);
 }
 .addTask {
   display: flex;
@@ -65,9 +79,16 @@ a{
 }
 label{
   display: flex;
-  width: 280px;
-  justify-content: space-around;
+  width: 345px;
+  height: 62px;
+  justify-content: space-between;
+  padding: 10px;
   align-items:center;
   background-color: #F9FAFB;
-  border-radius: 5px;
+  border-radius: 8px;
+}
+.todos{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
