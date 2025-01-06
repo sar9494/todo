@@ -19,7 +19,7 @@
   border: none;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.16);
 }
-.blueButton {
+.addButton {
   background-color: #3c82f6;
   color: white;
   border: none;
@@ -29,21 +29,18 @@
   font-size: 18px;
   border-radius: 6px;
 }
-.grayButton {
-  border: none;
-  display: flex;
-  padding: 8px 16px;
-  align-items: center;
-  font-size: 18px;
-  border-radius: 6px;
-}
-.buttons {
+.filterButtons {
   display: flex;
   gap: 5px;
   margin: 0px 100px 0px 0px;
 }
+.filterButtons button{
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  height: 32px;
+}
 input {
-  width: 260px;
   color: #71717a;
   display: flex;
   height: 40px;
@@ -65,4 +62,12 @@ h3{
 }
 a{
   text-decoration: none;
+}
+label{
+  display: flex;
+  width: 280px;
+  justify-content: space-around;
+  align-items:center;
+  background-color: #F9FAFB;
+  border-radius: 5px;
 }
