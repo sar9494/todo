@@ -31,11 +31,12 @@
 }
 .nonClicked{
   background-color:#F3F4F6;
-              color:black
+  color: #71717a;
 }
 .clicked{
+  color: #F3F4F6;
   background-color:#3c82f6;
-              color: #F3F4F6 ;
+  
 }
 .filterButtons {
   display: flex;
@@ -56,26 +57,26 @@ input {
   padding: 8px 16px;
   justify-content: center;
   align-items: flex-start;
-  border: none;
+  border-radius: 5px;
 }
 .textInput{
   width: 250px;
-  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.16);
+  border: 1px solid ;
+  border-color: #d7d7d8;
 }
 .addTask {
   display: flex;
   gap: 10px;
 }
 .footer{
+  margin-top: 20px;
   display: flex;
   gap: 5px;
-  color: #71717a;
-}
-h3{
-  color: #71717a;
+  color: #6B7280;
 }
 a{
   text-decoration: none;
+  color: #3B73ED;
 }
 label{
   display: flex;
@@ -88,6 +89,11 @@ label{
   border-radius: 8px;
 }
 .todos{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.logs{
   display: flex;
   flex-direction: column;
   gap: 10px;
