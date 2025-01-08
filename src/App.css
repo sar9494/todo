@@ -27,7 +27,10 @@
   padding: 4px 16px;
   align-items: center;
   font-size: 18px;
-  border-radius: 6px;
+}
+button{
+  border: none;
+  border-radius: 5px;
 }
 .nonClicked{
   background-color:#F3F4F6;
@@ -44,25 +47,22 @@
   width: 95%;
 }
 .filterButtons button{
-  padding: 5px;
-  border-radius: 5px;
   border: none;
   height: 35px;
   padding: 4px 12px;
 }
 input {
-  color: #71717a;
-  display: flex;
-  height: 30px;
-  padding: 8px 16px;
-  justify-content: center;
-  align-items: flex-start;
   border-radius: 5px;
 }
-.textInput{
+input[type=text] {
+  color: #71717a;
+  height: 30px;
+  padding: 8px 16px;
   width: 250px;
-  border: 1px solid ;
   border-color: #d7d7d8;
+}
+input[type=text]:focus{
+  border: 1px solid #3B73ED;
 }
 .addTask {
   display: flex;
@@ -81,12 +81,34 @@ a{
 label{
   display: flex;
   width: 345px;
-  height: 62px;
   justify-content: space-between;
   padding: 10px;
   align-items:center;
   background-color: #F9FAFB;
   border-radius: 8px;
+}
+label div{
+  display:flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logs div{
+  width: 345px;
+  padding: 10px;
+  background-color: #F9FAFB;
+  border-radius: 8px;
+  margin: 10px auto;
+}
+label:hover{
+  background-color: #f0f0f0;
+}
+label:hover button{
+  background-color: #f0f0f0;
+}
+label p , .logs h4{
+  width: 245px;
+  word-wrap: break-word;
 }
 .todos{
   display: flex;
@@ -95,6 +117,46 @@ label{
 }
 .logs{
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+}
+.logs div{
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+}
+.logs h4{
+  margin-bottom: 10px;
+}
+.logs button{
+  margin: 10px 0px 0px 170px;
+  padding: 5px;
+}
+ul{
+  text-align: start;
+  padding-inline-start: 10px;
+}
+.deleteButton{
+  color: red;
+  background-color:#F9FAFB;
+  border: none;
+  padding: 7px;
+}
+.deleteButton:hover{
+  background: #FEF2F2;
+}
+input[type=checkbox]:hover {
+  transform: scale(1.1);
+  border: black;
+}
+.remove{
+  display: none;
+}
+.clearCompleted{
+  justify-content: space-between;
+  height: 60px;
+  align-items: center;
+  width: 345px;
+  color: #6B7280;
 }
