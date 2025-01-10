@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import Input from "./components/Input";
-import Footer from "./components/Footer";
 import Todos from "./components/Todo";
+import FooterText from "./components/FooteText";
 function App() {
   const [todos, setTodos] = useState([]);
   const [logs, setLogs] = useState([]);
@@ -12,7 +12,7 @@ function App() {
     <div className="container">
       <Input logs={logs} todos={todos} setLogs={setLogs} setTodos={setTodos} filterState={filterState} setFilterState={setFilterState}/>
       <Todos todos={todos} filterState={filterState} setTodos={setTodos} logs={logs} setLogs={setLogs}/>
-      <Footer/>
+      <FooterText/>
     </div>
   );
 }
