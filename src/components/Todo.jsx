@@ -108,7 +108,7 @@ const Todos = (props) => {
             return {
               ...log,
               status: "active",
-              logs: [...log.logs, { status: "active", time: moment().format("llll") }],
+              logs: [...log.logs, { status: "restored", time: moment().format("llll") }],
             };
           } else return log;
         });
@@ -202,8 +202,6 @@ const Todos = (props) => {
       )}
     </div>
     </>
-    
-    
 }
 
 export default Todos
