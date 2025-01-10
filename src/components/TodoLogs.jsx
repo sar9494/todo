@@ -1,6 +1,6 @@
 import LittleButtons from "./LittleButtons"
 
-const Logs = (props) => {
+const TodoLogs = (props) => {
     const {logs,filterState ,showAlert} = props
     return <div className="logs">
     {logs.map(
@@ -28,4 +28,4 @@ const Logs = (props) => {
     )}
   </div>
 }
-export default Logs
+export default TodoLogs

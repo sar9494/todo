@@ -1,6 +1,7 @@
 import LittleButtons from "./LittleButtons";
 import moment from "moment";
-import Logs from "./logs";
+import TodoLogs from "./TodoLogs.jsx";
+
 const Todos = (props) => {
     const {todos,filterState,setTodos,logs,setLogs}=props
     const checkboxHandler = (id) => {
@@ -125,7 +126,7 @@ const Todos = (props) => {
         }
       };
     return <>
-    <Logs logs={logs} filterState={filterState} showAlert={showAlert}/>
+    <TodoLogs logs={logs} filterState={filterState} showAlert={showAlert}/>
     <div className="todos"> 
     {todos.length === 0 && filterState == "all" ? (
         <p style={{ color: "#71717a" }}>No tasks yet. Add one above!</p>
