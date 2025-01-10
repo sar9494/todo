@@ -9,6 +9,7 @@ const FILTER_BUTTONS = [
   { text: "Completed", status: "completed" },
   { text: "Logs", status: "log" },
 ];
+//tesst
 const Input = (props) => {
   const { logs, todos, setLogs, setTodos, filterState, setFilterState } = props;
   const [inputValue, setInputValue] = useState("");
