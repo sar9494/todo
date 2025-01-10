@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="container">
       <Input logs={logs} todos={todos} setLogs={setLogs} setTodos={setTodos} filterState={filterState} setFilterState={setFilterState}/>
-      <Todos todos={todos} filterState={filterState} setTodos={setTodos} logs={logs} setLogs={setLogs}/>
+      <Todos todos={todos} filterState={filterState} setTodos={setTodos} logs={logs} setLogs={setLogs} setFilterState={setFilterState}/>
       <FooterText/>
     </div>
   );

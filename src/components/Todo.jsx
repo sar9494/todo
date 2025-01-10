@@ -3,7 +3,7 @@ import moment from "moment";
 import TodoLogs from "./TodoLogs.jsx";
 
 const Todos = (props) => {
-    const {todos,filterState,setTodos,logs,setLogs}=props
+    const {todos,filterState,setTodos,logs,setLogs,setFilterState}=props
     const checkboxHandler = (id) => {
         const updatedTodos = todos.map((task) => {
           if (task.id == id) {
