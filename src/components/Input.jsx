@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import moment from "moment";
-import Button from "./Button";
+import Button from "./Filter_Button";
+import LittleButtons from "./LittleButtons";
 const FILTER_BUTTONS = [
   { text: "All", status: "all" },
   { text: "Active", status: "active" },
@@ -50,9 +51,7 @@ const Input = (props) => {
           value={inputValue}
           onChange={handleInputChange}
         />
-        <button className="addButton" onClick={createNewTask}>
-          Add
-        </button>
+        <LittleButtons text="Add" className="addButton" onClick={createNewTask}/>
       </div>
       <div className="filterButtons">
       {

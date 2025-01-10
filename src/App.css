@@ -28,25 +28,24 @@
   align-items: center;
   font-size: 18px;
 }
-button{
+button {
   border: none;
   border-radius: 5px;
 }
-.nonClicked{
-  background-color:#F3F4F6;
+.nonClicked {
+  background-color: #f3f4f6;
   color: #71717a;
 }
-.clicked{
-  color: #F3F4F6;
-  background-color:#3c82f6;
-  
+.clicked {
+  color: #f3f4f6;
+  background-color: #3c82f6;
 }
 .filterButtons {
   display: flex;
   gap: 5px;
   width: 95%;
 }
-.filterButtons button{
+.filterButtons button {
   border: none;
   height: 35px;
   padding: 4px 12px;
@@ -54,109 +53,114 @@ button{
 input {
   border-radius: 5px;
 }
-input[type=text] {
+input[type="text"] {
   color: #71717a;
   height: 30px;
   padding: 8px 16px;
   width: 250px;
   border-color: #d7d7d8;
 }
-input[type=text]:focus{
-  border: 1px solid #3B73ED;
+input[type="text"]:focus {
+  border: 1px solid #3b73ed;
 }
 .addTask {
   display: flex;
   gap: 10px;
 }
-.footer{
+.footer {
   margin-top: 20px;
   display: flex;
   gap: 5px;
-  color: #6B7280;
+  color: #6b7280;
 }
-a{
+a {
   text-decoration: none;
-  color: #3B73ED;
+  color: #3b73ed;
 }
-label{
+label {
   display: flex;
   width: 345px;
   justify-content: space-between;
   padding: 10px;
-  align-items:center;
-  background-color: #F9FAFB;
+  align-items: center;
+  background-color: #f9fafb;
   border-radius: 8px;
 }
-label div{
-  display:flex;
+label div {
+  display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.logs div{
+.logs div {
   width: 345px;
   padding: 10px;
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
   border-radius: 8px;
   margin: 10px auto;
 }
-label:hover{
+label:hover {
   background-color: #f0f0f0;
 }
-label:hover button{
+label:hover button {
   background-color: #f0f0f0;
 }
-label p , .logs h4{
+label p,
+.logs h4 {
   width: 245px;
   word-wrap: break-word;
 }
-.todos{
+.todos {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.logs{
+.logs {
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 20px;
 }
-.logs div{
+.logs div {
   background-color: #f0f0f0;
   padding: 20px;
   border-radius: 5px;
 }
-.logs h4{
+.logs h4 {
   margin-bottom: 10px;
 }
-.logs button{
+.logs button {
   margin: 10px 0px 0px 170px;
   padding: 5px;
 }
-ul{
+ul {
   text-align: start;
   padding-inline-start: 10px;
 }
-.deleteButton{
+.deleteButton {
   color: red;
-  background-color:#F9FAFB;
+  background-color: #f9fafb;
   border: none;
   padding: 7px;
 }
-.deleteButton:hover{
-  background: #FEF2F2;
+.deleteButton:hover {
+  background: #fef2f2;
 }
-input[type=checkbox]:hover {
+input[type="checkbox"]:hover {
   transform: scale(1.1);
   border: black;
 }
-.remove{
+.remove {
   display: none;
 }
-.clearCompleted{
+.clearCompleted {
   justify-content: space-between;
   height: 60px;
   align-items: center;
   width: 345px;
-  color: #6B7280;
+  color: #6b7280;
+}
+.clearCompletedButton {
+  color: red;
+  background: none;
 }
